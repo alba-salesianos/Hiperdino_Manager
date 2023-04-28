@@ -1,9 +1,9 @@
 package es.hiperdino;
 
-import es.hiperdino.utils.Products;
+import es.hiperdino.utils.RandomGenerator;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Products.getRandom());
+        System.out.println(RandomGenerator.getRandomProduct());
     }
 }
