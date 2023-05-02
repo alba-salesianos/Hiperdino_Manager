@@ -5,7 +5,7 @@ import es.hiperdino.utils.RandomGenerator;
 import java.util.Stack;
 
 public class Customer {
-    private String name;
+    public String name;
     private int numberOfItems;
     private Stack<String> shoppingCart = new Stack<>();
 
@@ -23,6 +23,8 @@ public class Customer {
         String message = shoppingCart.toString().replace("[","").replace("]","").replace(",","\n  -");
         return message = "  - " + message;
     }
+
+
 
     @Override
     public String toString() {
