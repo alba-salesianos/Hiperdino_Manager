@@ -16,7 +16,7 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
 
 
-        while (option != 6) {
+        while (option != 5) {
 
             String boxGraphic = "\n╔═════════════════════════════════════════╗";
             boxGraphic += "\n║            H I P E R D I N O            ║";
@@ -76,19 +76,34 @@ public class Main {
 
 
                 case 4:
+                    if (isOpen) {
+                        if (!placeholderCashier.isEmpty()) {
+                            System.out.println("Mostrando clientes:");
+                            System.out.println(placeholderCashier.displayLine());
+                        } else {
+                            System.out.println("No hay clientes en la cola.");
+                        }
+
+                    } else {
+                        System.out.println(closedMessage);
+                    }
 
                     break;
+
 
                 case 5:
+                    if (isOpen) {
+                        isOpen = false;
+                        System.out.println("Caja cerrada.");
+                    }
+                    System.out.println("Cerrando supermercado...");
 
                     break;
 
-                case 6:
-                    System.out.println("¡Maldito seas, Perry el Ornitorrinco!");
-                    break;
 
                 default:
-                    System.out.println("¡Estás atrapado entre las opciones 1 y 6, Perry el Ornitorrinco! ¡El resto no son válidas!");
+                    System.out.println("Opción no válida. Seleccione opción de 1 a 5.");
+
                     break;
             }
 

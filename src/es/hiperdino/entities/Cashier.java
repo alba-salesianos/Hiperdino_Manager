@@ -15,29 +15,33 @@ public class Cashier {
         this.numberOfCustomers = 0;
     }
 
-    public void addToLine(Customer customer){
+    public void addToLine(Customer customer) {
         customerLine.add(customer);
         customerLineNames.add(customer.getName());
         numberOfCustomers++;
     }
 
-    public String displayLine(){
-        String message = customerLineNames.toString().replace("[","").replace("]","").replace(",","\n  -");
+
+    public String displayLine() {
+        return customerLine.toString().replace("[", "").replace("]", "").replace(",", "\n");
+    }
+
+    public String displayLineNames() {
+        String message = customerLineNames.toString().replace("[", "").replace("]", "").replace(",", "\n  -");
         return message = "  - " + message;
     }
 
-    public boolean isEmpty(){
-        if(customerLine.isEmpty()){
+    public boolean isEmpty() {
+        if (customerLine.isEmpty()) {
             return true;
         } else {
             return false;
         }
     }
 
-    public Customer getNextCustomer(){
+    public Customer getNextCustomer() {
         return customerLine.poll();
     }
-
 
 
     @Override
@@ -46,7 +50,7 @@ public class Cashier {
                 "\n* ID: " + id +
                 "\n* Total de clientes: " + numberOfCustomers +
                 "\n* Clientes en la fila:\n" +
-                displayLine() +
-                "\n ===================================";
+                displayLineNames() +
+                "\n===================================";
     }
 }
