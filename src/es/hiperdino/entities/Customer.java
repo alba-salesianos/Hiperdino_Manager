@@ -33,7 +33,7 @@ public class Customer {
                 "\n* Total de productos: " + numberOfItems +
                 "\n* Lista de artículos en la cesta:\n" +
                 displayCart() +
-                "\n ===================================";
+                "\n===================================";
     }
 }
 

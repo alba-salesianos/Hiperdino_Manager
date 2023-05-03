@@ -2,6 +2,7 @@ package es.hiperdino;
 
 import es.hiperdino.entities.Cashier;
 import es.hiperdino.entities.Customer;
+import es.hiperdino.utils.RandomGenerator;
 
 import java.util.Scanner;
 
@@ -44,11 +45,19 @@ public class Main {
                     } else {
                         System.out.println("La caja ya está abierta.");
                     }
+
                     break;
 
                 case 2:
 
+                    if(isOpen){
+                        Customer newCustomer = RandomGenerator.getRandomCustomer();
+                        placeholderCashier.addToLine(newCustomer);
+                        System.out.println("Cliente añadido:\n" + newCustomer);
 
+                    } else {
+                        System.out.println("La caja está cerrada.");
+                    }
                     break;
 
                 case 3:
