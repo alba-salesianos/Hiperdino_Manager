@@ -5,13 +5,17 @@ import es.hiperdino.utils.RandomGenerator;
 import java.util.Stack;
 
 public class Customer {
-    public String name;
+    private String name;
     private int numberOfItems;
     private Stack<String> shoppingCart = new Stack<>();
 
     public Customer() {
         this.name = RandomGenerator.getRandomName();
         this.numberOfItems = 0;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     public void addItemToCart(){

@@ -7,7 +7,8 @@ import java.util.Random;
 public class Cashier {
     private int id;
     private int numberOfCustomers;
-    private Queue<String> customerLine = new LinkedList<>();
+    private Queue<Customer> customerLine = new LinkedList<>();
+    private Queue<String> customerLineNames = new LinkedList<>();
 
     public Cashier() {
         this.id = new Random().nextInt(99999) + 10000;
@@ -15,13 +16,26 @@ public class Cashier {
     }
 
     public void addToLine(Customer customer){
-        customerLine.add(customer.name);
+        customerLine.add(customer);
+        customerLineNames.add(customer.getName());
         numberOfCustomers++;
     }
 
     public String displayLine(){
-        String message = customerLine.toString().replace("[","").replace("]","").replace(",","\n  -");
+        String message = customerLineNames.toString().replace("[","").replace("]","").replace(",","\n  -");
         return message = "  - " + message;
+    }
+
+    public boolean isEmpty(){
+        if(customerLine.isEmpty()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Customer getNextCustomer(){
+        return customerLine.poll();
     }
 
 

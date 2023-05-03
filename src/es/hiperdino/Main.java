@@ -10,11 +10,10 @@ public class Main {
     public static void main(String[] args) {
 
         Cashier placeholderCashier = new Cashier();
-
         boolean isOpen = false;
+        String closedMessage = "La caja está cerrada.";
         int option = -1;
         Scanner keyboard = new Scanner(System.in);
-
 
 
         while (option != 6) {
@@ -39,7 +38,7 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    if (!isOpen){
+                    if (!isOpen) {
                         isOpen = true;
                         System.out.println("Caja abierta.");
                     } else {
@@ -50,17 +49,28 @@ public class Main {
 
                 case 2:
 
-                    if(isOpen){
+                    if (isOpen) {
                         Customer newCustomer = RandomGenerator.getRandomCustomer();
                         placeholderCashier.addToLine(newCustomer);
                         System.out.println("Cliente añadido:\n" + newCustomer);
 
                     } else {
-                        System.out.println("La caja está cerrada.");
+                        System.out.println(closedMessage);
                     }
                     break;
 
                 case 3:
+                    if (isOpen) {
+                        if (!placeholderCashier.isEmpty()) {
+                            System.out.println("Siguiente cliente:");
+                            System.out.println(placeholderCashier.getNextCustomer());
+                        } else {
+                            System.out.println("No hay clientes en la cola.");
+                        }
+
+                    } else {
+                        System.out.println(closedMessage);
+                    }
 
                     break;
 
