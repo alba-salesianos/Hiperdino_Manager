@@ -15,6 +15,10 @@ public class Cashier {
         this.numberOfCustomers = 0;
     }
 
+    public int getId() {
+        return this.id;
+    }
+
     public void addToLine(Customer customer) {
         customerLine.add(customer);
         customerLineNames.add(customer.getName());

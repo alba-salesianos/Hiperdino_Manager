@@ -47,6 +47,7 @@ public class Main {
 
                     break;
 
+
                 case 2:
 
                     if (isOpen) {
@@ -57,7 +58,9 @@ public class Main {
                     } else {
                         System.out.println(closedMessage);
                     }
+
                     break;
+
 
                 case 3:
                     if (isOpen) {
@@ -78,7 +81,7 @@ public class Main {
                 case 4:
                     if (isOpen) {
                         if (!placeholderCashier.isEmpty()) {
-                            System.out.println("Mostrando clientes:");
+                            System.out.println("ID Cajero: " + placeholderCashier.getId()+ "\nMostrando clientes:");
                             System.out.println(placeholderCashier.displayLine());
                         } else {
                             System.out.println("No hay clientes en la cola.");
@@ -106,10 +109,7 @@ public class Main {
 
                     break;
             }
-
         }
-
         keyboard.close();
-
     }
 }
