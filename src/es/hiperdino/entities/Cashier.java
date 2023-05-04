@@ -55,11 +55,11 @@ public class Cashier {
 
     @Override
     public String toString() {
-        return "===================================" +
-                "\n* ID: " + id +
+        return "-----------------------------------" +
+                "\n* ID Cajero: " + id +
                 "\n* Total de clientes: " + numberOfCustomers +
-                "\n* Clientes en la fila:\n" +
-                displayLineNames() +
-                "\n===================================";
+                "\n* Clientes en la fila:\n\n" +
+                displayLine() +
+                "\n-----------------------------------";
     }
 }

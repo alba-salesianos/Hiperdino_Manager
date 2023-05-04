@@ -81,8 +81,7 @@ public class Main {
                 case 4:
                     if (isOpen) {
                         if (!placeholderCashier.isEmpty()) {
-                            System.out.println("ID Cajero: " + placeholderCashier.getId() + "\nMostrando clientes:");
-                            System.out.println(placeholderCashier.displayLine());
+                            System.out.println(placeholderCashier);
                         } else {
                             System.out.println("No hay clientes en la cola.");
                         }
