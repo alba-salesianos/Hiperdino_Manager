@@ -14,20 +14,22 @@ public class Customer {
         this.numberOfItems = 0;
     }
 
+
     public String getName() {
         return this.name;
     }
 
-    public void addItemToCart(){
+
+    public void addItemToCart() {
         shoppingCart.add(RandomGenerator.getRandomProduct());
         numberOfItems++;
     }
 
-    public String displayCart(){
-        String message = shoppingCart.toString().replace("[","").replace("]","").replace(",","\n  -");
+
+    public String displayCart() {
+        String message = shoppingCart.toString().replace("[", "").replace("]", "").replace(",", "\n  -");
         return message = "  - " + message;
     }
-
 
 
     @Override

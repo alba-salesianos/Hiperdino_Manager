@@ -15,9 +15,11 @@ public class Cashier {
         this.numberOfCustomers = 0;
     }
 
+
     public int getId() {
         return this.id;
     }
+
 
     public void addToLine(Customer customer) {
         customerLine.add(customer);
@@ -30,10 +32,12 @@ public class Cashier {
         return customerLine.toString().replace("[", "").replace("]", "").replace(",", "\n");
     }
 
+
     public String displayLineNames() {
         String message = customerLineNames.toString().replace("[", "").replace("]", "").replace(",", "\n  -");
         return message = "  - " + message;
     }
+
 
     public boolean isEmpty() {
         if (customerLine.isEmpty()) {
@@ -42,6 +46,7 @@ public class Cashier {
             return false;
         }
     }
+
 
     public Customer getNextCustomer() {
         return customerLine.poll();
